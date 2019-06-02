@@ -1,6 +1,7 @@
 package schiller.com;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class TestJDBC {
   public static void main(String[] args) {
@@ -12,6 +13,11 @@ public class TestJDBC {
 
     db.deleleById("mydb",2);
 
+    try {
+      conn.close();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
 
   }
 }
